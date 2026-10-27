@@ -1,0 +1,191 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "content"
+    label: "Site Content"
+    files:
+      - file: "data/content.json"
+        name: "content_data"
+        label: "Site Content Data"
+        fields:
+          # --- HERO SECTION ---
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Availability Badge", name: "badge", widget: "string" }
+              - { label: "Headline Prefix", name: "headlinePrefix", widget: "string" }
+              - { label: "Headline Highlight (Cyan)", name: "headlineHighlight", widget: "string" }
+              - { label: "Headline Suffix", name: "headlineSuffix", widget: "string" }
+              - { label: "Sub-headline", name: "subheadline", widget: "text" }
+              - { label: "Primary Button Label", name: "primaryButtonText", widget: "string" }
+              - { label: "Secondary Button Label", name: "secondaryButtonText", widget: "string" }
+              - label: "Trust Line Items"
+                name: "trustLine"
+                widget: "list"
+                field: { label: "Item", name: "item", widget: "string" }
+
+          # --- ABOUT SECTION ---
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Section Tag", name: "tag", widget: "string" }
+              - { label: "Section Title", name: "title", widget: "string" }
+              - { label: "Section Subtitle", name: "subtitle", widget: "text" }
+              - label: "About Narrative Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+              - label: "Terminal Profile Card"
+                name: "terminal"
+                widget: "object"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Role", name: "role", widget: "string" }
+                  - { label: "Location", name: "location", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+                  - { label: "Education", name: "education", widget: "string" }
+                  - { label: "Background", name: "background", widget: "string" }
+                  - { label: "Focus", name: "focus", widget: "string" }
+                  - label: "Languages"
+                    name: "languages"
+                    widget: "list"
+                    field: { label: "Language", name: "lang", widget: "string" }
+                  - { label: "Status", name: "status", widget: "string" }
+                  - { label: "Philosophy", name: "philosophy", widget: "string" }
+              - label: "Quick Info List"
+                name: "infoList"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Value", name: "value", widget: "string" }
+
+          # --- SERVICES SECTION ---
+          - label: "Services (6 Cards)"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Icon Identifier", name: "icon", widget: "select", options: ["business", "landing", "wordpress", "ecommerce", "portfolio", "redesign"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Benefit Description", name: "description", widget: "text" }
+              - label: "Deliverables (3 points)"
+                name: "deliverables"
+                widget: "list"
+                field: { label: "Deliverable", name: "item", widget: "string" }
+
+          # --- SKILLS SECTION ---
+          - label: "Skills (My Tech Stack)"
+            name: "skills"
+            widget: "object"
+            fields:
+              - label: "Core Skills"
+                name: "core"
+                widget: "list"
+                fields:
+                  - { label: "Skill Name", name: "name", widget: "string" }
+                  - { label: "Level Label", name: "level", widget: "string" }
+              - label: "Working Knowledge Skills"
+                name: "working"
+                widget: "list"
+                fields:
+                  - { label: "Skill Name", name: "name", widget: "string" }
+                  - { label: "Level Label", name: "level", widget: "string" }
+              - label: "Applied Badges"
+                name: "badges"
+                widget: "list"
+                field: { label: "Badge Name", name: "badge", widget: "string" }
+
+          # --- WHY WORK WITH ME ---
+          - label: "Why Work With Me"
+            name: "whyMe"
+            widget: "list"
+            fields:
+              - { label: "Icon Type", name: "icon", widget: "select", options: ["shield", "check", "devices", "support"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+          # --- SELECTED WORK / PROJECTS ---
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Project Title", name: "title", widget: "string" }
+              - { label: "Subtitle / Brand", name: "subtitle", widget: "string" }
+              - { label: "Badge Label", name: "badge", widget: "string", default: "Concept Project" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Live Demo URL (Leave empty for demo modal)", name: "demoUrl", widget: "string", required: false }
+              - { label: "Browser URL Preview", name: "browserUrl", widget: "string" }
+              - { label: "Mockup Type", name: "mockupType", widget: "select", options: ["dental", "restaurant", "saas"] }
+              - label: "Tech Tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+
+          # --- PRICING SECTION ---
+          - label: "Pricing Section"
+            name: "pricing"
+            widget: "object"
+            fields:
+              - label: "Pricing Packages"
+                name: "plans"
+                widget: "list"
+                fields:
+                  - { label: "ID", name: "id", widget: "string" }
+                  - { label: "Package Name", name: "name", widget: "string" }
+                  - { label: "Price Prefix (e.g. Starting at)", name: "prefix", widget: "string", required: false }
+                  - { label: "Price Amount", name: "price", widget: "string" }
+                  - { label: "Currency", name: "currency", widget: "string", default: "$" }
+                  - { label: "Period (e.g. one-time)", name: "period", widget: "string", required: false }
+                  - { label: "Most Popular Flag", name: "popular", widget: "boolean", default: false }
+                  - { label: "Target Purpose", name: "purpose", widget: "text" }
+                  - { label: "Button Label", name: "buttonText", widget: "string" }
+                  - label: "Features List"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Feature", name: "feature", widget: "string" }
+              - { label: "Custom Quote Note", name: "customNote", widget: "text" }
+
+          # --- PROCESS SECTION ---
+          - label: "Process Steps"
+            name: "process"
+            widget: "list"
+            fields:
+              - { label: "Step Number", name: "step", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+          # --- FAQ SECTION ---
+          - label: "FAQ Items"
+            name: "faq"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+          # --- CONTACT DETAILS ---
+          - label: "Contact Details"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Intro Text", name: "text", widget: "text" }
+              - { label: "WhatsApp Display Number", name: "whatsappNumber", widget: "string" }
+              - { label: "WhatsApp Raw Number", name: "whatsappRaw", widget: "string" }
+              - { label: "Email Address", name: "email", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+
+          # --- FOOTER ---
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Bio Text", name: "bio", widget: "text" }
+              - { label: "Copyright Notice", name: "copyright", widget: "string" }

@@ -1,0 +1,312 @@
+{
+  "hero": {
+    "badge": "Available for New Projects",
+    "headlinePrefix": "I Build ",
+    "headlineHighlight": "Fast, Secure & Modern",
+    "headlineSuffix": " Websites for Businesses Worldwide",
+    "subheadline": "I'm Muhammad Moiz Latif, a web developer and Cyber Security student based in Taxila, Pakistan. I create clean, mobile-friendly websites that help businesses look professional, build trust, and turn visitors into customers — with security in mind from day one.",
+    "primaryButtonText": "Start a Project",
+    "secondaryButtonText": "View Pricing",
+    "trustLine": [
+      "Honest pricing",
+      "Clear communication",
+      "On-time delivery"
+    ]
+  },
+  "about": {
+    "tag": "Background",
+    "title": "About Me",
+    "subtitle": "Web development fortified with cyber security fundamentals, focused on dependable, secure websites.",
+    "terminal": {
+      "name": "Muhammad Moiz Latif",
+      "role": "Web Developer & Cyber Security Student",
+      "location": "Taxila, Pakistan",
+      "email": "moizlateef.dev@gmail.com",
+      "education": "Cyber Security (1st Semester)",
+      "background": "Certified Web Development Course",
+      "focus": "Business websites for international clients",
+      "languages": ["English", "Urdu"],
+      "status": "Available for New Projects",
+      "philosophy": "Security, speed, and clean code in mind — from day one."
+    },
+    "paragraphs": [
+      "I'm Muhammad Moiz Latif, a web developer based in Taxila, Pakistan, currently in my first semester of a Cyber Security degree. Alongside my studies, I completed a web development course and build modern, responsive websites for businesses and individuals around the world.",
+      "I chose web development partly because strong programming skills are essential in cyber security — building real websites keeps my coding sharp and lets me practice creating useful web tools. This background means I build every website with security, speed, and clean code in mind, not just good looks."
+    ],
+    "infoList": [
+      { "label": "Location:", "value": "Taxila, Pakistan" },
+      { "label": "Education:", "value": "Cyber Security (1st Semester)" },
+      { "label": "Background:", "value": "Certified Web Development Course" },
+      { "label": "Focus:", "value": "Business websites for international clients" },
+      { "label": "Languages:", "value": "English, Urdu" }
+    ]
+  },
+  "services": [
+    {
+      "id": "business",
+      "icon": "business",
+      "title": "Business Websites",
+      "description": "Professional multi-page websites for companies and local brands.",
+      "deliverables": [
+        "Custom brand-aligned corporate design",
+        "Structured multi-page company layout",
+        "Inquiry forms & Google Maps integration"
+      ]
+    },
+    {
+      "id": "landing",
+      "icon": "landing",
+      "title": "Landing Pages",
+      "description": "High-converting single pages for products, services, and campaigns.",
+      "deliverables": [
+        "Conversion-focused visual hierarchy",
+        "Ultra-fast lightweight performance",
+        "Prominent calls-to-action & lead capture"
+      ]
+    },
+    {
+      "id": "wordpress",
+      "icon": "wordpress",
+      "title": "WordPress Websites",
+      "description": "Easy-to-manage WordPress sites the client can update themselves.",
+      "deliverables": [
+        "Intuitive, user-friendly CMS dashboard",
+        "Custom block & page setup without bloat",
+        "Client handover walkthrough & simple edits"
+      ]
+    },
+    {
+      "id": "ecommerce",
+      "icon": "ecommerce",
+      "title": "E-Commerce Websites",
+      "description": "Online stores with product pages, cart, and checkout flow.",
+      "deliverables": [
+        "Clean product showcase & category pages",
+        "Smooth cart & friction-free checkout flow",
+        "Secure payment gateway setup guidance"
+      ]
+    },
+    {
+      "id": "portfolio",
+      "icon": "portfolio",
+      "title": "Portfolio & Personal Brand",
+      "description": "Clean showcase sites for professionals and creators.",
+      "deliverables": [
+        "Modern personal branding presentation",
+        "Interactive work & case study showcases",
+        "Direct contact & resume download setup"
+      ]
+    },
+    {
+      "id": "redesign",
+      "icon": "redesign",
+      "title": "Website Redesign & Maintenance",
+      "description": "Modernising old websites and keeping them updated and secure.",
+      "deliverables": [
+        "Contemporary visual overhaul & mobile fix",
+        "Speed tuning & fundamental security audits",
+        "Regular software patches & site backups"
+      ]
+    }
+  ],
+  "skills": {
+    "core": [
+      { "name": "HTML5", "level": "Primary Stack" },
+      { "name": "CSS3", "level": "Primary Stack" },
+      { "name": "WordPress", "level": "Primary Stack" },
+      { "name": "C#", "level": "Primary Stack" },
+      { "name": "Python", "level": "Primary Stack" }
+    ],
+    "working": [
+      { "name": "Java", "level": "Working Knowledge" },
+      { "name": "Node.js", "level": "Working Knowledge" },
+      { "name": "React", "level": "Basic Level" }
+    ],
+    "badges": [
+      "Responsive Design",
+      "Basic SEO Setup",
+      "Web Security Fundamentals",
+      "Git & GitHub"
+    ]
+  },
+  "whyMe": [
+    {
+      "icon": "shield",
+      "title": "Security-Minded Development",
+      "description": "A cyber security background means secure practices from day one."
+    },
+    {
+      "icon": "check",
+      "title": "Honest & Transparent",
+      "description": "Clear pricing, no fake promises, regular progress updates."
+    },
+    {
+      "icon": "devices",
+      "title": "Modern, Mobile-First Design",
+      "description": "Every site looks perfect on phones, tablets, and desktops."
+    },
+    {
+      "icon": "support",
+      "title": "Support After Launch",
+      "description": "I don't disappear after delivery; support is included in every package."
+    }
+  ],
+  "projects": [
+    {
+      "id": "dental-clinic",
+      "title": "Dental Clinic Website",
+      "subtitle": "ApexDental Care",
+      "badge": "Concept Project",
+      "description": "Clean healthcare portal featuring online appointment booking, categorized clinic services, and specialized doctor profiles.",
+      "tags": ["HTML5", "CSS3", "Responsive Design", "JavaScript"],
+      "demoUrl": "https://sitedemo09.netlify.app",
+      "browserUrl": "demo.dentalclinic.preview",
+      "mockupType": "dental"
+    },
+    {
+      "id": "restaurant",
+      "title": "Restaurant Website",
+      "subtitle": "Artisan Bistro",
+      "badge": "Concept Project",
+      "description": "Hospitality platform presenting curated menus, culinary image gallery, table reservation forms, and live timings with location mapping.",
+      "tags": ["HTML5", "CSS3", "UI/UX", "Responsive"],
+      "demoUrl": "",
+      "browserUrl": "demo.restaurant.preview",
+      "mockupType": "restaurant"
+    },
+    {
+      "id": "saas",
+      "title": "SaaS Landing Page",
+      "subtitle": "CloudFlow.io",
+      "badge": "Concept Project",
+      "description": "High-conversion product landing page featuring interactive feature cards, transparent pricing comparison, and streamlined sign-up flow.",
+      "tags": ["HTML5", "CSS3", "Modern Web", "Cyber Cyan UI"],
+      "demoUrl": "",
+      "browserUrl": "demo.cloudflow-saas.preview",
+      "mockupType": "saas"
+    }
+  ],
+  "pricing": {
+    "plans": [
+      {
+        "id": "starter",
+        "name": "STARTER",
+        "price": "149",
+        "currency": "$",
+        "period": "one-time",
+        "popular": false,
+        "purpose": "Ideal for targeted campaigns, personal launches, and high-impact single pages.",
+        "features": [
+          "1-page website / landing page",
+          "Mobile-responsive modern design",
+          "Contact form + WhatsApp button",
+          "Basic SEO setup",
+          "2 revision rounds",
+          "Delivery in 5 days",
+          "14 days of free post-launch support"
+        ],
+        "buttonText": "Choose Starter"
+      },
+      {
+        "id": "business",
+        "name": "BUSINESS",
+        "price": "349",
+        "currency": "$",
+        "period": "one-time",
+        "popular": true,
+        "purpose": "Complete professional digital footprint for established companies and growing businesses.",
+        "features": [
+          "Up to 5 pages (Home, About, Services, Gallery, Contact)",
+          "Custom code or WordPress (client's choice)",
+          "Contact forms, Google Maps, social media links",
+          "Basic SEO setup + Google-friendly structure",
+          "3 revision rounds",
+          "Delivery in 10–14 days",
+          "30 days of free post-launch support"
+        ],
+        "buttonText": "Choose Business"
+      },
+      {
+        "id": "ecommerce",
+        "name": "E-COMMERCE / CUSTOM",
+        "prefix": "Starting at",
+        "price": "649",
+        "currency": "$",
+        "period": "",
+        "popular": false,
+        "purpose": "Advanced stores and custom platforms with dedicated e-commerce workflows.",
+        "features": [
+          "Online store or custom website (up to 10 pages)",
+          "Product pages, cart, and checkout flow (or booking / custom features)",
+          "Payment gateway setup guidance",
+          "Advanced on-page SEO structure",
+          "3 revision rounds",
+          "Delivery time confirmed before the project starts",
+          "30 days of priority post-launch support"
+        ],
+        "buttonText": "Choose Custom"
+      }
+    ],
+    "customNote": "Need something different? Every business is unique — message me for a free custom quote. No hidden charges, ever."
+  },
+  "process": [
+    {
+      "step": "01",
+      "title": "1. Discover",
+      "description": "We discuss your business, goals, and requirements on WhatsApp or a call."
+    },
+    {
+      "step": "02",
+      "title": "2. Design",
+      "description": "I share a design direction and we confirm it before building."
+    },
+    {
+      "step": "03",
+      "title": "3. Build",
+      "description": "I develop your website and keep you updated at every stage."
+    },
+    {
+      "step": "04",
+      "title": "4. Launch & Support",
+      "description": "Your site goes live, and free support is included as per your package."
+    }
+  ],
+  "faq": [
+    {
+      "question": "How long does a website take?",
+      "answer": "A landing page takes about 5 days; a business website 10–14 days. Timelines are always confirmed before we start."
+    },
+    {
+      "question": "Do I need to provide the text and images?",
+      "answer": "You can provide them, or I can help you prepare content for your pages."
+    },
+    {
+      "question": "Can you redesign my existing website?",
+      "answer": "Yes, redesign and modernisation is one of my services."
+    },
+    {
+      "question": "How do payments work?",
+      "answer": "Project terms, including payment schedule, are agreed clearly in writing before any work begins."
+    },
+    {
+      "question": "Do you work with clients outside Pakistan?",
+      "answer": "Yes, most of my focus is on international clients. I communicate in English and work across time zones."
+    },
+    {
+      "question": "What if I need changes after launch?",
+      "answer": "Every package includes free post-launch support, and affordable maintenance is available after that."
+    }
+  ],
+  "contact": {
+    "heading": "Have a Project in Mind?",
+    "text": "Tell me about your project and I'll reply with honest advice and a free quote — no pressure, no obligation.",
+    "whatsappNumber": "+92 324 1924672",
+    "whatsappRaw": "923241924672",
+    "email": "moizlateef.dev@gmail.com",
+    "location": "Taxila, Pakistan · Working Worldwide"
+  },
+  "footer": {
+    "bio": "Creating clean, high-performance, and secure web solutions for forward-thinking clients worldwide from Taxila, Pakistan.",
+    "copyright": "© 2026 Muhammad Moiz Latif — Web Developer & Cyber Security Student, Taxila, Pakistan."
+  }
+}
