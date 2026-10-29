@@ -250,7 +250,7 @@
     {
       "badge": "Concept Project",
       "browserUrl": "demo.restaurant.preview",
-      "demoUrl": "",
+      "demoUrl": "https://olive-ember2.netlify.app",
       "subtitle": "Artisan Bistro",
       "title": "Restaurant Website",
       "tags": [
@@ -266,7 +266,7 @@
     {
       "badge": "Concept Project",
       "browserUrl": "demo.cloudflow-saas.preview",
-      "demoUrl": "",
+      "demoUrl": "https://cloudflow1.netlify.app",
       "subtitle": "CloudFlow.io",
       "title": "SaaS Landing Page",
       "tags": [
