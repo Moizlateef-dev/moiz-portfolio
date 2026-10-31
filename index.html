@@ -96,8 +96,38 @@
       });
     }
   </script>
+  <!-- One-Line ML Loading Screen styles (inline so it paints instantly; hides on page load, no fixed duration) -->
+  <style>
+    #siteLoader{position:fixed;inset:0;z-index:9999;background:#0A0E17;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .35s ease,visibility .35s ease}
+    #siteLoader.loader-hide{opacity:0;visibility:hidden;pointer-events:none}
+    #siteLoader .loader-name{margin-top:22px;font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:15px;font-weight:600;letter-spacing:5px;color:#E5E7EB;text-align:center;animation:loaderFade .6s ease .2s both}
+    #siteLoader .loader-sub{margin-top:7px;font-family:Inter,system-ui,sans-serif;font-size:9px;letter-spacing:3px;color:#94A3B8;animation:loaderFade .6s ease .35s both}
+    #siteLoader .loader-bar{width:180px;height:3px;margin-top:24px;background:rgba(229,231,235,.12);border-radius:99px;overflow:hidden}
+    #siteLoader .loader-bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#22D3EE,#2DD4BF);animation:loaderFill .95s ease-out .05s both}
+    #siteLoader .loader-path{stroke-dasharray:100;stroke-dashoffset:100;animation:loaderDraw .95s ease-out .05s both;filter:drop-shadow(0 0 10px rgba(34,211,238,.45))}
+    @keyframes loaderDraw{to{stroke-dashoffset:0}}
+    @keyframes loaderFill{to{width:100%}}
+    @keyframes loaderFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    @media (prefers-reduced-motion: reduce){#siteLoader .loader-path,#siteLoader .loader-bar i,#siteLoader .loader-name,#siteLoader .loader-sub{animation:none}#siteLoader .loader-path{stroke-dashoffset:0}#siteLoader .loader-bar i{width:100%}}
+  </style>
+  <noscript><style>#siteLoader{display:none !important}</style></noscript>
 </head>
 <body>
+  <!-- One-Line ML Loading Screen -->
+  <div id="siteLoader" aria-hidden="true">
+    <svg width="150" height="115" viewBox="0 0 130 100" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="loaderGrad" x1="0" y1="0" x2="130" y2="100" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#22D3EE"/>
+          <stop offset="1" stop-color="#2DD4BF"/>
+        </linearGradient>
+      </defs>
+      <path class="loader-path" d="M15 85 L15 15 L45 52 L75 15 L75 85 L108 85" pathLength="100" stroke="url(#loaderGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="loader-name">MUHAMMAD MOIZ LATIF</div>
+    <div class="loader-sub">WEB DEVELOPER</div>
+    <div class="loader-bar"><i></i></div>
+  </div>
 
   <!-- Subtle Cyber Background Grid Pattern -->
   <div class="cyber-grid-bg" aria-hidden="true"></div>
@@ -1421,6 +1451,27 @@
   <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
   <!-- Core JavaScript -->
+  <script>
+    // Loading screen: no fixed duration — it hides the moment the page has
+    // fully loaded, with a safety fallback so it can never get stuck.
+    (function () {
+      var loader = document.getElementById('siteLoader');
+      if (!loader) return;
+      var hidden = false;
+      function hideLoader() {
+        if (hidden) return;
+        hidden = true;
+        loader.classList.add('loader-hide');
+        setTimeout(function () { loader.remove(); }, 450);
+      }
+      if (document.readyState === 'complete') {
+        hideLoader();
+      } else {
+        window.addEventListener('load', hideLoader);
+      }
+      setTimeout(hideLoader, 3000);
+    })();
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
