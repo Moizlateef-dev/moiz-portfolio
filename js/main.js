@@ -998,24 +998,32 @@ function initPricingPackageSelection() {
 
     const pkgKey = packageName.toLowerCase();
 
+    // Auto-filled details sentences: if the box is empty, or still holds a
+    // previous package's auto-filled sentence, refresh it for the new pick.
+    // Text the visitor typed themselves is never overwritten.
+    const PKG_PREFILLS = [
+      'Hi Moiz, I am interested in the Starter Package ($149) for a 1-page modern landing page.',
+      'Hi Moiz, I am interested in the Business Package ($349) for an up to 5-page company website.',
+      'Hi Moiz, I am interested in the E-Commerce / Custom Package (Starting at $649).'
+    ];
+    const setDetailsFor = (sentence) => {
+      if (detailsTextarea && (!detailsTextarea.value.trim() || PKG_PREFILLS.includes(detailsTextarea.value))) {
+        detailsTextarea.value = sentence;
+      }
+    };
+
     if (pkgKey.includes('starter')) {
       websiteTypeSelect.value = 'Landing Page';
       budgetSelect.value = 'Under $150';
-      if (detailsTextarea && !detailsTextarea.value) {
-        detailsTextarea.value = 'Hi Moiz, I am interested in the Starter Package ($149) for a 1-page modern landing page.';
-      }
+      setDetailsFor(PKG_PREFILLS[0]);
     } else if (pkgKey.includes('business')) {
       websiteTypeSelect.value = 'Business Website';
       budgetSelect.value = '$150–$350';
-      if (detailsTextarea && !detailsTextarea.value) {
-        detailsTextarea.value = 'Hi Moiz, I am interested in the Business Package ($349) for an up to 5-page company website.';
-      }
+      setDetailsFor(PKG_PREFILLS[1]);
     } else if (pkgKey.includes('custom') || pkgKey.includes('e-commerce')) {
       websiteTypeSelect.value = 'E-Commerce';
       budgetSelect.value = '$650+';
-      if (detailsTextarea && !detailsTextarea.value) {
-        detailsTextarea.value = 'Hi Moiz, I am interested in the E-Commerce / Custom Package (Starting at $649).';
-      }
+      setDetailsFor(PKG_PREFILLS[2]);
     }
 
     updateSelectedPackageBar(packageName);
