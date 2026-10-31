@@ -996,19 +996,21 @@ function initPricingPackageSelection() {
 
     if (!websiteTypeSelect || !budgetSelect) return;
 
-    if (packageName.includes('Starter')) {
+    const pkgKey = packageName.toLowerCase();
+
+    if (pkgKey.includes('starter')) {
       websiteTypeSelect.value = 'Landing Page';
-      budgetSelect.value = '$150–$350';
+      budgetSelect.value = 'Under $150';
       if (detailsTextarea && !detailsTextarea.value) {
         detailsTextarea.value = 'Hi Moiz, I am interested in the Starter Package ($149) for a 1-page modern landing page.';
       }
-    } else if (packageName.includes('Business')) {
+    } else if (pkgKey.includes('business')) {
       websiteTypeSelect.value = 'Business Website';
       budgetSelect.value = '$150–$350';
       if (detailsTextarea && !detailsTextarea.value) {
         detailsTextarea.value = 'Hi Moiz, I am interested in the Business Package ($349) for an up to 5-page company website.';
       }
-    } else if (packageName.includes('Custom') || packageName.includes('E-Commerce')) {
+    } else if (pkgKey.includes('custom') || pkgKey.includes('e-commerce')) {
       websiteTypeSelect.value = 'E-Commerce';
       budgetSelect.value = '$650+';
       if (detailsTextarea && !detailsTextarea.value) {
@@ -1016,8 +1018,46 @@ function initPricingPackageSelection() {
       }
     }
 
+    updateSelectedPackageBar(packageName);
+
     showToast(`Selected: ${packageName}. Contact form updated!`, 'info');
   });
+}
+
+/**
+ * Selected Package Summary Bar (inside the contact form)
+ * Shows the package the visitor picked in the Pricing section, with its
+ * delivery line from the pricing data, until they pick another one.
+ * Also stores the selection on the form so the WhatsApp message can
+ * include an explicit "Selected Package" line.
+ */
+function updateSelectedPackageBar(packageName) {
+  const form = document.getElementById('contactForm');
+  if (!form || !packageName) return;
+
+  form.dataset.selectedPackage = packageName;
+
+  let bar = document.getElementById('selectedPackageBar');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.id = 'selectedPackageBar';
+    bar.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border:1px solid rgba(34,211,238,0.35);background:rgba(34,211,238,0.06);border-radius:12px;padding:12px 16px;margin-bottom:20px;font-size:0.95rem;';
+    form.insertBefore(bar, form.firstChild);
+  }
+
+  let deliveryText = '';
+  const plans = (activeContent && activeContent.pricing && activeContent.pricing.plans) || [];
+  const key = packageName.toLowerCase();
+  const plan = plans.find(p => p && p.name && key.includes(p.name.toLowerCase().split(' ')[0]));
+  if (plan && Array.isArray(plan.features)) {
+    deliveryText = plan.features.find(f => /^delivery/i.test(f)) || '';
+  }
+
+  bar.innerHTML =
+    '<span><strong style="color:var(--primary-accent, #22d3ee);">Selected Package:</strong> ' + escapeHtml(packageName) +
+    (deliveryText ? ' &middot; ' + escapeHtml(deliveryText) : '') +
+    '</span><a href="#pricing" style="color:var(--primary-accent, #22d3ee);font-weight:600;text-decoration:underline;">Change</a>';
+  bar.style.display = 'flex';
 }
 
 /**
@@ -1076,6 +1116,7 @@ function initContactForm() {
     const details = detailsInput.value.trim();
 
     const waRaw = (activeContent.contact && activeContent.contact.whatsappRaw) || '923241924672';
+    const selectedPackage = form.dataset.selectedPackage || '';
 
     // Construct WhatsApp prefilled message
     const waMessage = encodeURIComponent(
@@ -1083,8 +1124,9 @@ function initContactForm() {
       `*Name:* ${name}\n` +
       `*Email:* ${email}\n` +
       `*Website Type:* ${type}\n` +
-      `*Budget:* ${budget}\n\n` +
-      `*Project Details:*\n${details}`
+      `*Budget:* ${budget}\n` +
+      (selectedPackage ? `*Selected Package:* ${selectedPackage}\n` : '') +
+      `\n*Project Details:*\n${details}`
     );
 
     const waUrl = `https://wa.me/${waRaw}?text=${waMessage}`;
